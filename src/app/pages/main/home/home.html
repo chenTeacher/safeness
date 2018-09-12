@@ -1,0 +1,80 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>首页</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="松开立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="刷新中..."
+    ></ion-refresher-content>
+  </ion-refresher>
+  <div class="head">
+    通知公告
+    <button item-end ion-button small outline color="typeface">更多</button>
+  </div>
+  <ion-list>
+    <ion-item detail-push>
+      白山黑水
+      <span style="float: right">2018-01-16</span>
+    </ion-item>
+  </ion-list>
+  <div class="head">
+    安全指标
+  </div>
+  <div class="menu">
+    <ion-grid>
+      <ion-row wrap>
+        <ion-col text-center tappable col-6 *ngFor="let w of workremind;">
+          <img src="{{w.Icon}}">
+          <span class="title">{{w.value}}</span>
+          <ion-badge class="badge" item-end color="danger">{{badge}}</ion-badge>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  <ion-item *ngIf="!workremind.length" class="authority" style="border: 0px solid transparent">
+    暂无处理权限
+  </ion-item>
+  <div class="head">
+    工作提醒
+  </div>
+  <ion-list>
+    <ion-item detail-push *ngFor="let s of saftcode">
+      <ion-thumbnail item-start>
+        <img src="{{s.Icon}}">
+      </ion-thumbnail>
+      {{s.value}}
+      <span style="float: right">{{badge}}</span>
+    </ion-item>
+    <ion-item *ngIf="!saftcode.length" class="authority" style="border: 0px solid transparent">
+      暂无处理权限
+    </ion-item>
+  </ion-list>
+  <div class="head">
+    项目风险预警
+  </div>
+  <ion-list>
+    <ion-item detail-push *ngFor="let r of riskwarning">
+      <ion-thumbnail item-start>
+        <img src="{{r.Icon}}">
+      </ion-thumbnail>
+      {{r.value}}
+      <span style="float: right">{{badge}}</span>
+    </ion-item>
+    <ion-item *ngIf="!riskwarning.length" class="authority" style="border: 0px solid transparent">
+      暂无处理权限
+    </ion-item>
+  </ion-list>
+</ion-content>

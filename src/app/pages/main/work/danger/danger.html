@@ -1,0 +1,48 @@
+<!--
+  Generated template for the WorkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>危险作业管理</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="松开立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="刷新中..."
+    ></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item>
+      <ion-label>查询类别<span style="color: red">*</span></ion-label>
+      <ion-select okText="确定" cancelText="取消"
+                  [selectOptions]="{title: '查询类别'}"
+                  [(ngModel)]="type">
+        <ion-option *ngFor="let item of typeList" [value]="item">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>整改开始时间<span style="color: red">*</span></ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" cancelText="取消" doneText="确定" [(ngModel)]="st"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>整改结束时间<span style="color: red">*</span></ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" cancelText="取消" doneText="确定" [(ngModel)]="et"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item detail-push>
+      <div>动火作业申请(<span style="color: #86Db47">已通过</span>)</div>
+      <div>2018-01-16&nbsp;&nbsp;申请人：安全员</div>
+    </ion-item>
+  </ion-list>
+</ion-content>

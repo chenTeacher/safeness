@@ -1,0 +1,49 @@
+page-home {
+  .head{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    padding-left:1rem;
+    color: #00BACA;
+    word-spacing:0.5rem;
+    background: #EFEFEF;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    button{
+      position: absolute;
+      right: 0rem;
+      top: 0rem;
+    }
+  }
+  .badge{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .menu{
+    img{
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .title {
+      font-weight: bold;;
+      display: block;
+      margin-top: 0.5rem;
+      color: #808080;
+      letter-spacing: 0.1rem;
+    }
+    ion-row {
+      background-color: #EFEFEF;
+      padding: 0rem;
+    }
+    ion-col {
+      background-color: white;
+    }
+  }
+  .authority{
+    text-align: center;
+    color: #6e6e6e;
+  }
+}

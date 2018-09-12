@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>隐患登记</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>隐患类别<span style="color: red">*</span></ion-label>
+      <ion-select okText="确定" cancelText="取消"
+                  [selectOptions]="{title: '隐患类别'}"
+                  [(ngModel)]="type">
+        <ion-option *ngFor="let item of typeList" [value]="item">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item (click)="describeActionSheet()">
+      <ion-label>隐患描述<span style="color: red">*</span></ion-label>
+      日常检查
+    </ion-item>
+    <ion-item>
+      <div>整改前照片</div>
+      <img ng-show="!image.length>0" src="./assets/imgs/add_photo.png" width="48" height="48" style="margin: 5px"
+           (click)="photoActionSheet()">
+    </ion-item>
+    <ion-item>
+      <ion-label>整改措施<span style="color: red">*</span></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>隐患级别<span style="color: red">*</span></ion-label>
+      <ion-select okText="确定" cancelText="取消"
+                  [selectOptions]="{title: '隐患级别'}"
+                  [(ngModel)]="level">
+        <ion-option *ngFor="let item of levelList" [value]="item">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>整改开始时间<span style="color: red">*</span></ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" cancelText="取消" doneText="确定" [(ngModel)]="st"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>整改结束时间<span style="color: red">*</span></ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" cancelText="取消" doneText="确定" [(ngModel)]="et"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>隐患部位<span style="color: red">*</span></ion-label>
+      <ion-select okText="确定" cancelText="取消"
+                  [selectOptions]="{title: '隐患部位'}"
+                  [(ngModel)]="parts">
+        <ion-option *ngFor="let item of partsList" [value]="item">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>整改负责人<span style="color: red">*</span><span style="float: right">{{parts.person}}</span></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>整改单位<span style="color: red">*</span></ion-label>
+      <ion-select okText="确定" cancelText="取消"
+                  [selectOptions]="{title: '整改单位'}"
+                  [(ngModel)]="company">
+        <ion-option *ngFor="let item of companyList" [value]="item">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>整改执行人<span style="color: red">*</span><span style="float: right">{{company.person}}</span></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>整改班组<span style="color: red">*</span></ion-label>
+      <ion-select okText="确定" cancelText="取消"
+                  [selectOptions]="{title: '整改班组'}"
+                  [(ngModel)]="group">
+        <ion-option *ngFor="let item of groupList" [value]="item">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>整改班组负责人<span style="color: red">*</span><span style="float: right">{{group.person}}</span></ion-label>
+    </ion-item>
+  </ion-list>
+  <div class="head">
+    检查人信息
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label>检查单位<span style="float: right">玉溪项目部</span></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>检查人<span style="float: right">安全员</span></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>电话<span style="float: right">13890606548</span></ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>检查时间<span style="float: right">2018-09-04</span></ion-label>
+    </ion-item>
+  </ion-list>
+  <div style="width: 100%;padding: 0rem 1rem">
+    <button item-end ion-button small color="primary" style="width: 100%;margin: 0rem 0rem 2rem 0rem;" (click)="save()">
+      保存
+    </button>
+  </div>
+</ion-content>

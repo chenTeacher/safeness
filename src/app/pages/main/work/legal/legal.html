@@ -1,0 +1,29 @@
+<!--
+  Generated template for the WorkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>法规知识库</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="松开立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="刷新中..."
+    ></ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item detail-push >
+      安全生产法律
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,64 @@
+<!--
+  Generated template for the WorkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>隐患管理</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item detail-push  *ngFor="" (click)="choose()">
+      <ion-thumbnail item-start>
+        <img src="./assets/imgs/zximg.png">
+      </ion-thumbnail>
+      隐患匿名上报
+    </ion-item>
+    <ion-item detail-push  (click)="choose()">
+      <ion-thumbnail item-start>
+        <img src="./assets/imgs/zximg.png">
+      </ion-thumbnail>
+      隐患完善
+    </ion-item>
+    <ion-item detail-push (click)="choose()">
+      <ion-thumbnail item-start>
+        <img src="./assets/imgs/zximg.png">
+      </ion-thumbnail>
+      隐患整改
+    </ion-item>
+    <ion-item detail-push (click)="choose()">
+      <ion-thumbnail item-start>
+        <img src="./assets/imgs/zximg.png">
+      </ion-thumbnail>
+      隐患收验
+    </ion-item>
+    <ion-item detail-push (click)="choose()">
+      <ion-thumbnail item-start>
+        <img src="./assets/imgs/zximg.png">
+      </ion-thumbnail>
+     复查验证
+    </ion-item>
+    <ion-item detail-push (click)="choose()">
+      <ion-thumbnail item-start>
+        <img src="./assets/imgs/zximg.png">
+      </ion-thumbnail>
+     隐患查询
+    </ion-item>
+    <ion-item detail-push (click)="choose()">
+      <ion-thumbnail item-start>
+        <img src="./assets/imgs/zximg.png">
+      </ion-thumbnail>
+      统计分析
+    </ion-item>
+  </ion-list>
+</ion-content>

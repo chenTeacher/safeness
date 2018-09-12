@@ -1,0 +1,32 @@
+page-new {
+  .content{
+    background: #EFEFEF;
+  }
+  .card {
+    //position: absolute;
+    font-size: 0.8em;
+  }
+
+  .card-title {
+    position: absolute;
+    width: 100%;
+    top: 12%;
+    font-weight: bold;
+  }
+
+  .card-subtitle {
+    position: absolute;
+    font-size: 1.0em;
+    top: 52%;
+    width: 100%;
+    color: #585858;
+
+  }
+  .card-time {
+    position: absolute;
+    font-size: 1.0em;
+    width: auto;
+    top:33%;
+    left: 66%;
+  }
+}

@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>安全检查台账</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="松开立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="刷新中..."
+    ></ion-refresher-content>
+  </ion-refresher>
+  <div class="head">
+    安全检查总次数{{inspectCount+"次"}}
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label>检查单位</ion-label>
+      <ion-select okText="确定" cancelText="取消"
+                  [selectOptions]="{title: '检查单位'}"
+                  [(ngModel)]="company">
+        <ion-option *ngFor="let item of companyList" [value]="item">{{item.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>检查类型</ion-label>
+      <ion-select [(ngModel)]="unit" okText="确定" cancelText="取消">
+        <ion-option value="n64">全部</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>查询开始时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" cancelText="取消" doneText="确定" [(ngModel)]="st"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>查询结束时间</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" cancelText="取消" doneText="确定" [(ngModel)]="et"></ion-datetime>
+    </ion-item>
+  </ion-list>
+  <div class="head">
+    安全检查次数{{inspectCount+"次"}}
+  </div>
+  <ion-list >
+    <ion-item detail-push *ngFor="let item of listdata" (click)="inspectInfo(item)">
+      <div class="card">
+        <div class="card-title">{{item.name}}</div>
+        <div class="card-subtitle">{{item.type|textnumfomat}}</div>
+        <div class="card-time">{{item.time}}</div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

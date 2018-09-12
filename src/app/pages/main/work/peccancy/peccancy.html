@@ -1,0 +1,40 @@
+<!--
+  Generated template for the WorkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>违章管理</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-list>
+    <ion-item detail-push  *ngFor="" (click)="choose()">
+      <ion-thumbnail item-start>
+        <img src="./assets/imgs/zximg.png">
+      </ion-thumbnail>
+      违章登记
+    </ion-item>
+    <ion-item detail-push  (click)="choose()">
+      <ion-thumbnail item-start>
+        <img src="./assets/imgs/zximg.png">
+      </ion-thumbnail>
+      违章查询
+    </ion-item>
+    <ion-item detail-push (click)="choose()">
+      <ion-thumbnail item-start>
+        <img src="./assets/imgs/zximg.png">
+      </ion-thumbnail>
+      违章统计
+    </ion-item>
+  </ion-list>
+</ion-content>

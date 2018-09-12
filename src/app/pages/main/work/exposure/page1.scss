@@ -1,0 +1,23 @@
+page-page1 {
+  .content{
+    background: #EFEFEF;
+  }
+  .menu{
+    img{
+      width: 4rem;
+      height: 4rem;
+    }
+
+    .title {
+      font-weight: bold;;
+      display: block;
+      margin-top: 0.5rem;
+      color: #808080;
+      letter-spacing: 0.1rem;
+    }
+    ion-col {
+      background-color: white;
+      border: 1px solid #EFEFEF;
+    }
+  }
+}

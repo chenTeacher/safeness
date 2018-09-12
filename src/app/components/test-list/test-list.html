@@ -1,0 +1,17 @@
+<!-- Generated template for the TestListComponent component --> 
+
+<ion-content>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+    <ion-list class="list-ios-margin-top">
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+          {{ item.title}}
+        </button>
+    </ion-list>
+    <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+</ion-content>
+
+

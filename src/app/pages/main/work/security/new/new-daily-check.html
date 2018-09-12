@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>新增日常检查</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="register()">
+        <ion-icon name="add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="松开立即刷新"
+      refreshingSpinner="circles"
+      refreshingText="刷新中..."
+    ></ion-refresher-content>
+  </ion-refresher>
+  <div class="head">
+
+  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label>项目名称<span style="color: red">*</span>
+        <span style="float: right">玉溪项目组</span>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>项目名称<span style="color: red">*</span>
+        <span style="float: right">日常检查</span>
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>检查时间<span style="color: red">*</span>
+        <span style="float: right"> 2018-07-31</span>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item (click)="showRecord(!record)">
+      检查记录
+      <ion-icon name="ios-arrow-down" item-right *ngIf="record"></ion-icon>
+      <ion-icon name="ios-arrow-forward" item-right *ngIf="!record"></ion-icon>
+    </ion-item>
+    <ion-item *ngIf="record">
+      <ion-card-content *ngFor="let item of recordList;">
+        <p>{{item.name}}</p>
+      </ion-card-content>
+    </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item (click)="showNotice(!notice)">
+      生成通知单
+      <ion-icon name="ios-arrow-down" item-right *ngIf="notice"></ion-icon>
+      <ion-icon name="ios-arrow-forward" item-right *ngIf="!notice"></ion-icon>
+    </ion-item>
+    <ion-item *ngIf="notice">
+      <ion-card-content *ngFor="let item of noticeList;">
+        <p>{{item.name}}</p>
+      </ion-card-content>
+    </ion-item>
+  </ion-list>
+  <div style="width: 100%;padding: 0rem 1rem">
+    <button item-end ion-button small color="primary" style="width: 100%;margin: 0rem 0rem 2rem 0rem;">提交</button>
+  </div>
+</ion-content>

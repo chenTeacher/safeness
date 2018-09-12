@@ -1,0 +1,102 @@
+
+$font-path:'../assets/font'!default;
+@font-face {
+  font-family: 'icomoon';
+  src:  url('#{$font-path}/icomoon.eot?o59hhv');
+  src:  url('#{$font-path}/icomoon.eot?o59hhv#iefix') format('embedded-opentype'),
+    url('#{$font-path}/icomoon.ttf?o59hhv') format('truetype'),
+    url('#{$font-path}/icomoon.woff?o59hhv') format('woff'),
+    url('#{$font-path}/icomoon.svg?o59hhv#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icomoon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-gongzuo:before,
+.ion-ios-icon-gongzuo:before,
+.icon-image:before,
+.ion-ios-icon-image:before,
+.icon-gongdan:before,
+.ion-ios-icon-gongdan:before,
+.icon-ditu::before,
+.ion-ios-icon-ditu:before,
+.ion-ios-icon-ditu-outline:before,
+.icon-tongjitu:before,
+.ion-ios-icon-tongjitu:before{
+  @extend .icomoon
+}
+.icon-biaoqian:before {
+  content: "\e900";
+}
+.ion-ios-icon-ditu-outline:before{
+  content: "\e902";
+}
+.ion-ios-icon-ditu:before{
+  content: "\e902";
+}
+.icon-ditu:before {
+  content: "\e902";
+}
+.icon-gongdan:before {
+  content: "\e904";
+}
+.icon-gongzuo:before {
+  content: "\e905";
+}
+.ion-ios-icon-gongzuo:before {
+  content: "\e905";
+}
+.icon-lianxiren:before {
+  content: "\e906";
+}
+.icon-tongjitu:before {
+  content: "\e907";
+}
+.icon-rili:before {
+  content: "\e908";
+}
+.icon-setting:before {
+  content: "\e909";
+
+}
+.icon-shipin:before {
+  content: "\e90a";
+}
+.icon-shujufenxi:before {
+  content: "\e90b";
+}
+.icon-sousuo:before {
+  content: "\e90c";
+}
+.icon-suoding:before {
+  content: "\e90d";
+}
+.icon-tongzhi:before {
+  content: "\e90e";
+}
+.icon-image:before {
+  content: "\e90f";
+}
+.icon-main:before {
+  content: "\e910";
+}
+.icon-fenxiang:before {
+  content: "\e911";
+}
+
+.icon-zuzhijiegou:before {
+  content: "\e912";
+}
